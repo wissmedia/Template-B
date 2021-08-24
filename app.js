@@ -4,14 +4,14 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 const {
   MONGO_HOSTNAME,
-  MONGO_PORT ,
-  MONGO_DB ,
+  MONGO_PORT,
+  MONGO_DB,
 } = process.env
 
 const options = {
   useNewUrlParser: true,
-  useUnifiedTopology: true, 
-  useCreateIndex: true, 
+  useUnifiedTopology: true,
+  useCreateIndex: true,
 };
 
 const URI = `mongodb://${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}`;
@@ -30,6 +30,6 @@ mongoose.connect(URI, options)
     console.log(err)
   })
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
   res.send('its work')
 })
