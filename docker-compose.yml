@@ -6,8 +6,6 @@ services:
     ports: 
       - "4500:8080"
     environment: 
-      MONGO_USERNAME: root
-      MONGO_PASSWORD: password
       MONGO_HOSTNAME: paperon-db
       MONGO_PORT: 27017
       MONGO_DB: paperon
@@ -17,9 +15,6 @@ services:
   paperon-db:
     container_name: paperon-db
     image: mongo:4.4.8
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
     volumes: 
       - /appconfig/paperon/db_data:/data/db
     restart: unless-stopped

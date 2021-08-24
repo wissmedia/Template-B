@@ -3,20 +3,18 @@ const mongoose = require('mongoose');
 
 require("dotenv").config();
 const {
-  MONGO_USERNAME,
-  MONGO_PASSWORD,
   MONGO_HOSTNAME,
-  MONGO_PORT,
-  MONGO_DB,
+  MONGO_PORT ,
+  MONGO_DB ,
 } = process.env
 
 const options = {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
+  useUnifiedTopology: true, 
+  useCreateIndex: true, 
 };
 
-const URI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
+const URI = `mongodb://${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}`;
 
 const app = express()
 const port = process.env.PORT || 1000
@@ -32,6 +30,6 @@ mongoose.connect(URI, options)
     console.log(err)
   })
 
-app.get('/', (req, res) => {
+app.get('/', (req,res) => {
   res.send('its work')
 })
