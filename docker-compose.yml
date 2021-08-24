@@ -2,7 +2,7 @@ version: '2.4'
 services: 
   paperon-app:
     container_name: paperon-app
-    image: wissmedia/paperon:1.1.0
+    image: wissmedia/paperon:1.1.2
     ports: 
       - "4500:8080"
     environment: 
